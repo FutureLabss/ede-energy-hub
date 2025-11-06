@@ -12,21 +12,25 @@ const Home = () => {
       icon: Shield,
       title: "Safety First",
       description: "We put people and the environment above everything else.",
+      color: "from-blue-500 to-blue-600",
     },
     {
       icon: Target,
       title: "Excellence",
       description: "We aim to achieve the highest standards in performance and delivery.",
+      color: "from-amber-500 to-amber-600",
     },
     {
       icon: Users,
       title: "Partnership",
       description: "We collaborate openly with communities, partners, and agencies.",
+      color: "from-emerald-500 to-emerald-600",
     },
     {
       icon: Lightbulb,
       title: "Sustainability",
       description: "Committed to responsible resource management and long-term development.",
+      color: "from-teal-500 to-teal-600",
     },
   ];
 
@@ -35,7 +39,7 @@ const Home = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden mt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -44,25 +48,27 @@ const Home = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 animate-fade-in">
-            Powering Nigeria's Energy Future
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
-            A Nigerian-owned upstream oil and gas company committed to operational excellence,
-            safety, and sustainable development.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="animate-fade-in">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6">
+              Powering Nigeria's<br />Energy Future
+            </h1>
+            <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/90 mb-10 max-w-3xl mx-auto font-medium">
+              A Nigerian-owned upstream oil and gas company committed to operational excellence,
+              safety, and sustainable development.
+            </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <Link to="/about">
-              <Button variant="hero" size="lg" className="group">
+              <Button variant="secondary" size="lg" className="group rounded-full px-8 font-semibold">
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
             <Link to="/operations">
-              <Button variant="hero" size="lg">
+              <Button variant="hero" size="lg" className="rounded-full px-8 font-semibold">
                 Our Operations
               </Button>
             </Link>
+          </div>
           </div>
         </div>
       </section>
@@ -71,17 +77,17 @@ const Home = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-foreground mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               About EEPL
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
               Ede Exploration & Production Limited (EEPL) is engaged in the exploration, development,
               and production of petroleum resources. As the Operator of Ede Field, PPL 229, we are
               committed to contributing to Nigeria's energy security and creating lasting value through
               responsible resource development.
             </p>
             <Link to="/about">
-              <Button size="lg">
+              <Button size="lg" className="rounded-full px-8 font-semibold">
                 Discover Our Story
               </Button>
             </Link>
@@ -92,22 +98,22 @@ const Home = () => {
       {/* Core Values */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Core Values</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">Our Core Values</h2>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               The principles that guide everything we do at EEPL
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-2 hover:shadow-strong transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4">
-                    <value.icon className="w-8 h-8 text-primary-foreground" />
+              <Card key={index} className="group border-2 hover:border-primary hover:shadow-strong transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden">
+                <CardContent className="p-8 text-center">
+                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${value.color} mb-6 group-hover:scale-110 transition-transform duration-500`}>
+                    <value.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="font-bold text-xl mb-2 text-foreground">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
+                  <h3 className="font-display font-bold text-2xl mb-3 text-foreground">{value.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -116,14 +122,15 @@ const Home = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Partner with Us?</h2>
-          <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
+      <section className="py-24 bg-gradient-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">Ready to Partner with Us?</h2>
+          <p className="text-xl md:text-2xl mb-10 text-primary-foreground/90 max-w-2xl mx-auto font-medium">
             Join us in building a sustainable energy future for Nigeria
           </p>
           <Link to="/contact">
-            <Button variant="hero" size="lg">
+            <Button variant="secondary" size="lg" className="rounded-full px-10 font-semibold shadow-xl hover:shadow-2xl">
               Get in Touch
             </Button>
           </Link>

@@ -33,7 +33,7 @@ const About = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden mt-20">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -41,11 +41,11 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-hero" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4">
+        <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6">
             About EEPL
           </h1>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto font-medium">
             Building Nigeria's Energy Future Through Excellence and Partnership
           </p>
         </div>
@@ -55,8 +55,8 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Who We Are</h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">Who We Are</h2>
+            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
               <p>
                 Ede Exploration & Production Limited (EEPL) is a Nigerian-owned upstream oil and gas company
                 engaged in the exploration, development, and production of petroleum resources. EEPL is the
@@ -82,26 +82,26 @@ const About = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="border-2 hover:shadow-strong transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-6">
-                  <Eye className="w-8 h-8 text-primary-foreground" />
+            <Card className="group border-2 hover:border-primary hover:shadow-strong transition-all duration-500 rounded-2xl overflow-hidden">
+              <CardContent className="p-10">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <Eye className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="font-display text-3xl font-bold text-foreground mb-4">Our Vision</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   To be a respected indigenous exploration and production Company in Nigeria, known for
                   operational excellence, transparency, and strong community relationships.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-strong transition-all duration-300">
-              <CardContent className="p-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-accent mb-6">
-                  <Target className="w-8 h-8 text-foreground" />
+            <Card className="group border-2 hover:border-primary hover:shadow-strong transition-all duration-500 rounded-2xl overflow-hidden">
+              <CardContent className="p-10">
+                <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <Target className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
-                <ul className="space-y-3 text-muted-foreground">
+                <h3 className="font-display text-3xl font-bold text-foreground mb-4">Our Mission</h3>
+                <ul className="space-y-4 text-lg text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                     <span>To responsibly explore and produce oil and gas in a safe and sustainable manner.</span>
@@ -125,13 +125,13 @@ const About = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-foreground mb-12 text-center">Our Core Values</h2>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-16 text-center">Our Core Values</h2>
             <div className="space-y-6">
               {values.map((value, index) => (
-                <Card key={index} className="border-2 hover:shadow-elegant transition-all duration-300">
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-2">{value.title}</h3>
-                    <p className="text-muted-foreground">{value.description}</p>
+                <Card key={index} className="group border-2 hover:border-primary hover:shadow-elegant transition-all duration-300 rounded-2xl">
+                  <CardContent className="p-8">
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-3">{value.title}</h3>
+                    <p className="text-lg text-muted-foreground">{value.description}</p>
                   </CardContent>
                 </Card>
               ))}
