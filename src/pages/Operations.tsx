@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Search, TrendingUp, Users, Leaf } from "lucide-react";
 import heroImage from "@/assets/hero-operations.jpg";
-import communityImage from "@/assets/community.jpg";
+import refineryImage from "@/assets/refinery.jpg";
+import sustainabilityImage from "@/assets/sustainability.jpg";
 
 const Operations = () => {
   const focusAreas = [
@@ -83,21 +84,28 @@ const Operations = () => {
       {/* Ede Field */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8 text-center">Ede Field, PPL 229</h2>
-            <Card className="border-2 rounded-2xl">
-              <CardContent className="p-10">
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-12 text-center">Ede Field, PPL 229</h2>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="relative order-2 md:order-1">
+                <img 
+                  src={refineryImage} 
+                  alt="Oil refinery processing facility at dusk" 
+                  className="rounded-3xl shadow-strong w-full h-[400px] object-cover"
+                />
+              </div>
+              <div className="order-1 md:order-2">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   As the Operator of Ede Field, PPL 229, EEPL is committed to responsible resource development
                   that creates value for all stakeholders. Our operations at Ede Field represent our dedication
                   to operational excellence and sustainable practices.
                 </p>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   Through innovation and strong partnerships, we are building a Company that supports Nigeria's
                   energy future while empowering local communities and creating opportunities for growth.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -109,12 +117,12 @@ const Operations = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">Community Partnership</h2>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                   We believe that success in the oil and gas industry must go hand in hand with safety,
                   environmental protection, and community partnership. Our commitment extends beyond operations
                   to meaningful engagement with host communities.
                 </p>
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   We work closely with our host communities, regulators, and partners to ensure that our
                   operations deliver positive and sustainable impact, contributing to local capacity development
                   and community growth.
@@ -122,8 +130,8 @@ const Operations = () => {
               </div>
               <div className="rounded-3xl overflow-hidden shadow-strong hover:shadow-xl transition-shadow duration-300">
                 <img 
-                  src={communityImage} 
-                  alt="Community Partnership" 
+                  src={sustainabilityImage} 
+                  alt="Sustainable energy development with community integration" 
                   className="w-full h-full object-cover"
                 />
               </div>

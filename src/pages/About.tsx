@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Eye, Target, CheckCircle2 } from "lucide-react";
 import heroImage from "@/assets/hero-about.jpg";
+import infrastructureImage from "@/assets/infrastructure.jpg";
 
 const About = () => {
   const values = [
@@ -54,25 +55,34 @@ const About = () => {
       {/* Company Overview */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">Who We Are</h2>
-            <div className="space-y-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-              <p>
-                Ede Exploration & Production Limited (EEPL) is a Nigerian-owned upstream oil and gas company
-                engaged in the exploration, development, and production of petroleum resources. EEPL is the
-                Operator of Ede Field, PPL 229.
-              </p>
-              <p>
-                Founded in 2022, EEPL was established to contribute to Nigeria's energy security and to create
-                lasting value through responsible resource development. Our team brings together experienced
-                professionals and technical advisors with a shared goal of operating safely, efficiently and
-                sustainably.
-              </p>
-              <p>
-                At EEPL, we believe that success in the oil and gas industry must go hand in hand with safety,
-                environmental protection, and community partnership. We work closely with our host communities,
-                regulators, and partners to ensure that our operations deliver positive and sustainable impact.
-              </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8">Who We Are</h2>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Ede Exploration & Production Limited (EEPL) is a Nigerian-owned upstream oil and gas company
+                  engaged in the exploration, development, and production of petroleum resources. EEPL is the
+                  Operator of Ede Field, PPL 229.
+                </p>
+                <p>
+                  Founded in 2022, EEPL was established to contribute to Nigeria's energy security and to create
+                  lasting value through responsible resource development. Our team brings together experienced
+                  professionals and technical advisors with a shared goal of operating safely, efficiently and
+                  sustainably.
+                </p>
+                <p>
+                  At EEPL, we believe that success in the oil and gas industry must go hand in hand with safety,
+                  environmental protection, and community partnership. We work closely with our host communities,
+                  regulators, and partners to ensure that our operations deliver positive and sustainable impact.
+                </p>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={infrastructureImage} 
+                alt="Modern oil and gas pipeline infrastructure" 
+                className="rounded-3xl shadow-strong w-full h-[500px] object-cover"
+              />
             </div>
           </div>
         </div>

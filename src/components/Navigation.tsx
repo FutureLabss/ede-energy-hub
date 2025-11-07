@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/eepl-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,9 @@ const Navigation = () => {
         <div className="bg-background/80 backdrop-blur-xl rounded-full border border-border shadow-strong px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 font-display font-bold text-xl text-foreground">
-              EEPL
+            <Link to="/" className="flex items-center gap-3">
+              <img src={logo} alt="EEPL Logo" className="w-12 h-12 object-contain" />
+              <span className="font-display font-bold text-xl text-foreground">EEPL</span>
             </Link>
 
             {/* Desktop Navigation */}
