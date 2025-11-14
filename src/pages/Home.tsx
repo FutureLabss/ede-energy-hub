@@ -46,31 +46,27 @@ const Home = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-hero" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-transparent" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="animate-fade-in">
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6">
-              Powering Nigeria's<br />Energy Future
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-primary-foreground/90 mb-10 max-w-3xl mx-auto font-medium">
-              A Nigerian-owned upstream oil and gas company committed to operational excellence,
-              safety, and sustainable development.
-            </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <Link to="/about">
-              <Button variant="secondary" size="lg" className="group rounded-full px-8 font-semibold">
-                Learn More
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/operations">
-              <Button variant="hero" size="lg" className="rounded-full px-8 font-semibold">
-                Our Operations
-              </Button>
-            </Link>
-          </div>
+        <div className="relative z-10 container mx-auto px-4 text-left max-w-3xl animate-fade-in">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+            Ede Exploration & Production Limited
+          </h1>
+          <p className="text-xl md:text-2xl text-secondary font-semibold mb-4">
+            Responsible Energy Development in Nigeria
+          </p>
+          <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl leading-relaxed">
+            A Nigerian-owned upstream oil and gas company engaged in the exploration, development, 
+            and production of petroleum resources. Operator of Ede Field, PPL 229.
+          </p>
+          <div className="flex flex-wrap gap-4 animate-slide-up">
+            <Button size="lg" variant="default" asChild className="rounded-full text-base px-8 py-6 shadow-strong bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <Link to="/about">LEARN MORE</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="rounded-full text-base px-8 py-6 border-2 border-foreground/20 text-foreground hover:bg-foreground/10">
+              <Link to="/contact">CONTACT US</Link>
+            </Button>
           </div>
         </div>
       </section>

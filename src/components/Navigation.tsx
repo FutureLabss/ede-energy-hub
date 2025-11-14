@@ -24,7 +24,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <img src={logo} alt="EEPL Logo" className="w-12 h-12 object-contain" />
+              <img src={logo} alt="EEPL Logo" className="w-12 h-12 object-cover rounded-full" />
               <span className="font-display font-bold text-xl text-foreground">EEPL</span>
             </Link>
 

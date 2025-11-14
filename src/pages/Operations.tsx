@@ -40,14 +40,14 @@ const Operations = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-hero" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/40 to-transparent" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in">
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6">
             Our Operations
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto font-medium">
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto font-medium">
             Excellence in Exploration, Development, and Production
           </p>
         </div>
