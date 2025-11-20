@@ -1,12 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 import logo from "@/assets/eepl-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -43,17 +45,39 @@ const Navigation = () => {
                   {link.name}
                 </Link>
               ))}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full ml-2"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
             </div>
 
             {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden rounded-full"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+            <div className="md:hidden flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </Button>
+            </div>
           </div>
         </div>
 
